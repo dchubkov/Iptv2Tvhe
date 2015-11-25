@@ -1,3 +1,5 @@
 # Do not track Maven's target folder and its content by Git
 target/
 /mvn
+release.properties
+pom.xml.releaseBackup
