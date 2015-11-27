@@ -1,38 +1,32 @@
 package com.dchubkov.iptv2tvhe;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.Assert;
 
 /**
- * Unit test for simple App.
+ * Unit test for iptv2tvhe app.
  */
-public class Iptv2TvheTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public Iptv2TvheTest( String testName )
-    {
-        super( testName );
+public class Iptv2TvheTest {
+    
+    int testInt;
+
+    @BeforeMethod
+    public void setUp() {
+        testInt = 0;
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( Iptv2TvheTest.class );
+    @Test (groups = { "Smoke", "Unit" }, description = "Some smoke test", priority = 1)
+    public void smokeTest() {
+        testInt++;
+        Assert.assertTrue(testInt == 1);
+        System.out.println("smoke test passed");
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    
+    @Test (groups = { "Unit" }, description = "Some test", priority = 2)
+    public void someTest() {
+        testInt++;
+        Assert.assertTrue(testInt == 2);
+        System.out.println("some test passed");
     }
 }

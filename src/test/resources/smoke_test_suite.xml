@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" verbose="1" name="Smoke Test Run" annotations="JDK">
+    <!-- <parameter name="host" value="localhost" />
+    <parameter name="port" value="4444" />
+    <parameter name="browser" value="*firefox" />
+    <parameter name="url" value="SimURL" />
+ 
+    <listeners>
+      <listener class-name="com.BrowserHMI.utils.TestListener" />
+    </listeners>
+ -->
+   
+    <test name="All Demonstration Tests in WIN simulation for Firefox Browser" junit="false" preserve-order="true">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <exclude name="Obsolete" />
+                <exclude name="Broken" />
+            </run>
+        </groups>
+        
+        <packages>
+            <package name="com.dchubkov.iptv2tvhe.*"/>
+        </packages>
+    </test>
+</suite>
