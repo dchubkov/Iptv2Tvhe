@@ -16,6 +16,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <test.skip>false</test.skip>
+        <test.config>smoke_test_suite.xml</test.config>
     </properties>
 
     <!-- Build section -->
@@ -28,43 +29,14 @@
                 <configuration>
                     <skip>${test.skip}</skip>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/src/test/resources/smoke_test_suite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/test/resources/${test.config}</suiteXmlFile>
                     </suiteXmlFiles>
                     <reportsDirectory>${project.build.directory}/test-output</reportsDirectory>
-                    
-                    <executions>
-                        <execution>
-                            <id>smoke-tests</id>
-                            <phase>test</phase>
-                            <configuration>
-                                <suiteXmlFiles>
-                                    <suiteXmlFile>${project.basedir}/src/test/resources/smoke_test_suite.xml</suiteXmlFile>
-                                </suiteXmlFiles>
-                            </configuration>
-                            <goals>
-                                <goal>test1</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>common-tests</id>
-                            <phase>test</phase>
-                            <configuration>
-                                <suiteXmlFiles>
-                                    <suiteXmlFile>${project.basedir}/src/test/resources/common_test_suite.xml</suiteXmlFile>
-                                </suiteXmlFiles>
-                            </configuration>
-                            <goals>
-                                <goal>test2</goal>
-                            </goals>
-                        </execution>
-                      </executions>
-                    
-                    
                 </configuration>
             </plugin>
         </plugins>
     </build>
-  
+
     <!-- Dependencies section -->  
     <dependencies>
         <dependency>
@@ -72,6 +44,16 @@
             <artifactId>testng</artifactId>
             <version>[6.9.8,)</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>[2.4.1,)</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>[2.4.1,)</version>
         </dependency>
     </dependencies>
   

@@ -1,4 +1,4 @@
-package com.dchubkov.iptv2tvhe;
+package com.dchubkov.iptv2tvhe.automatedtesting.tests.webapi;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
